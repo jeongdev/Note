@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 5000
+let port = 5000
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser");
 
@@ -31,9 +31,9 @@ app.get('/', (req, res) => {
     res.send('Hello World 안녕하세요!?')
 })
 
-// app.get('/api/hello', (req, res) => {
-//     res.send("안녕하세요~~")
-// })
+app.get('/api/hello', (req, res) => {
+    res.send("안녕하세요~~")
+})
 
 app.post('/api/users/register', (req, res) => {
     // 회원가입할떄 필요한 정보들을 client 에서 가져오면
@@ -117,4 +117,6 @@ app.post('/api/users/login', (req, res) => {
 
 
 })
+
+port = 5000
 
